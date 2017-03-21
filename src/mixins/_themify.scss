@@ -1,0 +1,31 @@
+// ----
+// Sass (v3.4.21)
+// Compass (v1.0.3)
+// ----
+
+// Define theme variables
+
+$themes: (
+  default: ( // default theme
+    bg-color: white,
+    text-color: black,
+  )
+) !default;
+
+// Mixins and functions defined once
+
+@mixin themify() {
+  // Iterate over the themes
+  @each $theme-name, $theme in $themes {
+    $current-theme: $theme !global;
+    @content;
+  }
+}
+
+@function theme-get($key, $theme: $current-theme) {
+  $ret: map-get($theme, $key);
+  @if not $ret {
+    @error 'Your theme doesn\'t have a value for `#{$key}`.';
+  }
+  @return $ret;
+}

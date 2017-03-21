@@ -1,0 +1,9 @@
+@import './mixins/_themify';
+
+.example{
+  padding: 10px;
+  @include themify {
+    background: theme-get(bg-color);
+    color: theme-get(text-color);
+  }
+}
