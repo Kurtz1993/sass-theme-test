@@ -1,8 +1,9 @@
 $themes: (
-  blue: (
-    bg-color: white,
+  green: (
+    bg-color: black,
     text-color: green
   )
 );
 
 @import '../default.scss';
+@import '../app.scss';
