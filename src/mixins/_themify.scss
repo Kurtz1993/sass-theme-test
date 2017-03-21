@@ -5,10 +5,12 @@
 
 // Define theme variables
 
+@import '../_variables.scss';
+
 $themes: (
   default: ( // default theme
-    bg-color: white,
-    text-color: black,
+    bg-color: $primary,
+    text-color: $secondary,
   )
 ) !default;
 
